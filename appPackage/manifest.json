@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.15/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.15",
+  "version": "1.0.4",
+  "id": "637cd45f-2fcc-4867-8fde-2da218c7226b",
+  "packageName": "com.microsoft.teams.samples.msgExt",
+  "developer": {
+    "name": "Mark Nigh",
+    "websiteUrl": "https://marknigh.com",
+    "privacyUrl": "https://marknigh.com",
+    "termsOfUseUrl": "https://marknigh.com"
+  },
+  "icons": {
+    "color": "note-color.png",
+    "outline": "note-outline.png"
+  },
+  "name": {
+    "short": "Make OneNote Note",
+    "full": "ME SSO for Search, Action and link unfurling"
+  },
+  "description": {
+    "short": "Make a oneNote note from a message",
+    "full": "From a message within Teams, make a note/reminder into your one of your OneNote Workbooks"
+  },
+  "accentColor": "#FFFFFF",
+  "composeExtensions": [
+    {
+      "botId": "637cd45f-2fcc-4867-8fde-2da218c7226b",
+      "canUpdateConfiguration": true,
+      "commands": [
+        {
+          "id": "MAKENOTE",
+          "type": "action",
+          "title": "Make Note in OneNote",
+          "description": "Make a Note in oneNote",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": [
+            "commandBox",
+            "message"
+          ],
+          "parameters": [
+            {
+              "name": "param",
+              "title": "param",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "SignOutCommand",
+          "type": "action",
+          "title": "Sign Out",
+          "description": "Sign out from authenticated services.",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": [
+            "commandBox",
+            "compose"
+          ],
+          "parameters": [
+            {
+              "name": "param",
+              "title": "param",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "messageHandlers": [
+        {
+          "type": "link",
+          "value": {
+            "domains": [
+              "*.botframework.com"
+            ],
+	   "supportsAnonymizedPayloads": true
+          }
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity"
+  ],
+  "validDomains": [
+    "*.githubusercontent.com",
+    "*.ngrok.io",
+    "*.botframework.com"
+  ],
+  "webApplicationInfo": {
+    "id": "637cd45f-2fcc-4867-8fde-2da218c7226b",
+    "resource": "api://botid-637cd45f-2fcc-4867-8fde-2da218c7226b"
+  }
+}
